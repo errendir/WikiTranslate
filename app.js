@@ -100,6 +100,8 @@ app.get("/search/:name", function (req, res) {
 	
 	var name = req.params["name"];
 	
+	name.replace(" ", "_");
+	
 	request.get("http://en.wikipedia.org/wiki/" + name, function optionalCallback (err, httpResponse, body) {
 		
 		var $ = cheerio.load(body);

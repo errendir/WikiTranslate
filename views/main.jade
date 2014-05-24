@@ -7,10 +7,10 @@ block head
 	script#entry-template(type="text/x-handlebars-template")
 		div
 			| {{#each arr}}
-			div
-				div(style="display : inline-block; width : 40px; text-overflow : ellipsis; overflow : hidden; white-space : nowrap;")
-					| {{this.langu}}: 
-				div(style="display : inline-block; width : 600px;")
+			div.row
+				div.cell
+					| {{this.languLong}}: 
+				div.cell(style="width : 600px;")
 					| {{this.title}}
 			| {{/each}}	
 
