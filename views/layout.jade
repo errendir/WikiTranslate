@@ -1,0 +1,39 @@
+doctype html
+html
+	head
+		<!-- GitHub CSS for markdown -->
+		link(rel='stylesheet', href='/stylesheets/github.css')
+		
+		<!-- Code coloring -->
+		link(rel='stylesheet', href='/stylesheets/highlight.css')
+		link(rel='stylesheet', href='/stylesheets/addition.css')
+		
+		<!-- Basic CSS -->
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		
+		<!-- Favicon -->
+		link(rel="icon", type="image/png", href="/favico2.png")
+		
+		<!-- Font -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		
+		block head
+	body
+		div.menu
+			a(href="/") main page
+			a(href="/plan") journey project
+			a(href="/fractal") fractal generator
+			a(href="/gui") gui tutorial
+			a(href="/various") additional things
+			br
+			a(href="/photos") nature photography
+			a(href="/design") simple designs
+			a(href="/stories") unfinished stories
+			a(href="/contact") direct contact
+		block content
+
+		div.bottom
+			span
+				| (ɔ) Albert "Errendir" Siddhartha Sławiński (errendir@gmail.com)
+			span
+				|#{time}

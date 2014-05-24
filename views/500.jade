@@ -1,0 +1,13 @@
+extends layout
+
+block head
+	title 500 Server error
+
+block content
+	div.main
+		h1 500 — server crashed while processing your request (#{url})
+		| Here is the stack trace — if you know what I mean ;)
+		pre #{trace}
+		<!-- Rules of engagement, our restrictions are gone -->
+		<!-- #{err}	-->
+		span#shortphrase #{phrase}
