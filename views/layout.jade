@@ -17,23 +17,20 @@ html
 		<!-- Font -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		
+		<!-- jQuery -->
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+		script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js")
 		block head
+		
+		
 	body
 		div.menu
 			a(href="/") main page
-			a(href="/plan") journey project
-			a(href="/fractal") fractal generator
-			a(href="/gui") gui tutorial
-			a(href="/various") additional things
-			br
-			a(href="/photos") nature photography
-			a(href="/design") simple designs
-			a(href="/stories") unfinished stories
 			a(href="/contact") direct contact
 		block content
 
-		div.bottom
+		div#bottom
 			span
-				| (ɔ) Albert "Errendir" Siddhartha Sławiński (errendir@gmail.com)
+				| (ɔ) Albert "Errendir" Siddhartha Sławiński (errendir@gmail.com), Dan-Andrei Gheorghe (red13zero@yahoo.com)
 			span
 				|#{time}

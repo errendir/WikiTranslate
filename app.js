@@ -1,4 +1,4 @@
-//var express = require('express');
+var express = require('express');
 
 var http = require('http');
 var path = require('path');
@@ -86,10 +86,39 @@ function SimpleRender (filename)
 }
 
 // My pages!
-var simplepages = ["main", "plan", "photos", "various", "contact", "stories", "design", "fractal"];
+var simplepages = ["main", "contact"];
 for (var i=0; i<simplepages.length; i++)
 	app.get("/" + simplepages[i], SimpleRender(simplepages[i]));
 app.get('/', SimpleRender("main"));
+
+var request = require("request");
+var cheerio = require('cheerio')
+
+app.get("/search/:name", function (req, res) {
+	
+	console.log(req.params);
+	
+	var name = req.params["name"];
+	
+	request.get("http://en.wikipedia.org/wiki/" + name, function optionalCallback (err, httpResponse, body) {
+		
+		var $ = cheerio.load(body);
+		
+		arr = [];
+		
+		list = $("#p-lang .body ul li");
+		list.map(function (i, el) {
+			//console.log(el);
+			title = $(el).find("a").attr("title");
+			langu = $(el).find("a").attr("lang");
+			console.log(langu);
+			struct = {"langu" : langu, "title" : title};
+			arr.push(struct);
+			return struct;
+		})
+		res.send(arr);
+	});
+})
 
 
 function pad(number, digits)

@@ -1,7 +1,23 @@
 extends layout
 
 block head
+	script(src="scripts/main.js")
 	title Main page
+	
+	script#entry-template(type="text/x-handlebars-template")
+		div
+			| {{#each arr}}
+			div
+				div(style="display : inline-block; width : 40px; text-overflow : ellipsis; overflow : hidden; white-space : nowrap;")
+					| {{this.langu}}: 
+				div(style="display : inline-block; width : 600px;")
+					| {{this.title}}
+			| {{/each}}	
 
 block content
-	div.main!= rendermarkup("main.md")
+	div.main
+		h1 WikiTranslate
+		h2 Translate whatever you want!
+		input(type="text")#maininput
+		
+		div#translations
